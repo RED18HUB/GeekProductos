@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AluraGeek</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    
+</head>
+<body>
+    <header>
+        <div class="encabezado">
+            <img class="logo" src="./img/logo.png" alt="imagen">
+            <h1 class="titulo"> AluraGeek </h1>
+        </div>
+    </header>
+    <main class="main">
+    <div class="contenedor__general">
+        <div class="mis__productos">
+            <h1 class="titulo">MIS PRODUCTOS:</h1>
+            <br>
+            <div class="container">
+            <ul class="lista" data-productos>
+                               
+            </ul>
+                       
+        </div>
+    </div>
+        <div class="nuevo__producto">
+                <h1><span>AGREGAR</span> PRODUCTO :</h1>
+                <div class="derecha">
+                <form class="form-agregar" data-formulario="">
+                    <input type="text" id="nombre" name="nombre" required placeholder="nombre..." data-nombre>
+                    <input type="number" id="precio" name="precio" required placeholder="precio..." data-precio>
+                    <input type="text" id="imagen" name="imagen" required placeholder="imagen..." data-imagen>
+                    <div class="botones">
+                    <button type="submit" class="btn1 btn--primary">Enviar</button>
+                    <button type="button" onclick = "limpiar()" class="btn1 btn--primary">Limpiar</button>
+                </div>
+                </form>
+           
+        </div>
+    </div>
+
+</main>
+
+    <footer class="fin">
+        <div class="foo">
+        <h2> <img class="logo" src="./img/logo.png" alt="imagen">AluraGeek</h2>
+    </div>
+    <div class="final">
+        
+        <h3>DESARROLLADO POR LEX MIGUE</h3>
+        <p>ALURA LATAM- 2024</p>
+    </div>
+    </footer>
+   
+    <script src="./js/mostrarProductos.js" type="module" ></script>
+    <script src="./js/crearProducto.js" type="module" ></script>
+    <script src="./js/limpiar.js"> </script>
+    <script src="./js/eliminarProducto.js" type="module"> </script>
+    <script>
+        document.querySelectorAll('.boton-eliminar').forEach(boton => {
+    boton.addEventListener('click', function() {
+        const idArticuloAEliminar = boton.getAttribute('data-id'); // Obtener el ID del artículo del atributo de datos del botón
+        eliminarArticulo(idArticuloAEliminar); // Llamar a la función para eliminar el artículo
+        console.log("eliminar", idArticuloAEliminar)
+    });
+});
+    </script>
+</body>
+</html>
